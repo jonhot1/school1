@@ -1,10 +1,12 @@
-package pt.iade.school1.models;
+package pt.iade.school1.models.repository;
+
+import pt.iade.school1.models.Student;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class StudentRepository  {
-    private static ArrayList<Student> students =  new ArrayList<Student>(); 
+    private static ArrayList<Student> students =  new ArrayList<Student>();
     public static void populate() {    
         Student s; // auxiliary variable 
         s = new Student("Leonardo",LocalDate.parse("2002-05-24"),'M');

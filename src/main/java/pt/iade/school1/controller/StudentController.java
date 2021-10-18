@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pt.iade.school1.models.Student;
-import pt.iade.school1.models.StudentRepository;
+import pt.iade.school1.models.repository.StudentRepository;
 import pt.iade.school1.models.exceptions.NotFoundException;
 
 

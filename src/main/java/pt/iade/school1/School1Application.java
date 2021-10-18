@@ -2,7 +2,7 @@ package pt.iade.school1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import pt.iade.school1.models.StudentRepository;
+import pt.iade.school1.models.repository.StudentRepository;
 
 @SpringBootApplication
 public class School1Application {
