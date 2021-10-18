@@ -10,6 +10,7 @@ public class Student {
     private char gender; 
     private int number;
     private ArrayList<Unit> units;
+    private ArrayList<Enrolment> enrolments;
     public Student(String name, LocalDate birthDate, 
                    char gender) { 
         this.name = name; 
@@ -19,7 +20,8 @@ public class Student {
         nextNumber++; 
         email = "";
         units=new ArrayList<Unit>();
-    } 
+        enrolments=new ArrayList<Enrolment>();
+    }
     public static int getNextNumber() { return nextNumber; } 
     public String getName() {  return name; } 
     public void setName(String name) { this.name = name; } 
@@ -50,5 +52,12 @@ public class Student {
     public void enroll(Unit unit){
         units.add(unit);
         unit.getStudents().add(this);
+    }
+    public ArrayList<Enrolment> getEnrolments(){
+        return enrolments;
+    }
+    public void enroll(Enrolment enrolment){
+        enrolments.add(enrolment);
+        enrolment.getUnit().getEnrolments().add(enrolment);
     }
 }
