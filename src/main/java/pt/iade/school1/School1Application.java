@@ -11,5 +11,4 @@ public class School1Application {
 		SpringApplication.run(School1Application.class, args);
 		StudentRepository.populate();
 	}
-
 }
