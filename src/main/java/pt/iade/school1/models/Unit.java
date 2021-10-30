@@ -1,11 +1,14 @@
 package pt.iade.school1.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 
 public class Unit {
     private int id;
     private String name;
     private int credits;
+    @JsonIgnoreProperties({"unit"})
     private ArrayList<Student> students;
     private ArrayList<Enrolment> enrolments;
 

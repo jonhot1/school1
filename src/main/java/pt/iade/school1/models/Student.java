@@ -1,32 +1,35 @@
 package pt.iade.school1.models;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Student { 
-    private static int nextNumber = 0; 
-    private String name; 
-    private LocalDate birthDate; 
-    private String email; 
+public class Student extends Person{
+    private static int nextNumber = 0;
     private char gender; 
     private int number;
     private ArrayList<Unit> units;
     private ArrayList<Enrolment> enrolments;
-    public Student(String name, LocalDate birthDate, 
-                   char gender) { 
-        this.name = name; 
-        this.birthDate = birthDate; 
-        this.gender = gender; 
+    @JsonIgnoreProperties({"student"})
+    public Student(String name, LocalDate birthDay,
+                   char gender) {
+        super(name,birthDay,gender);
         this.number = nextNumber; 
-        nextNumber++; 
-        email = "";
+        nextNumber++;
         units=new ArrayList<Unit>();
         enrolments=new ArrayList<Enrolment>();
     }
-    public static int getNextNumber() { return nextNumber; } 
+
+    @Override
+    public String getReference() {
+        return "S"+number;
+    }
+
+    public static int getNextNumber() { return nextNumber; }
     public String getName() {  return name; } 
     public void setName(String name) { this.name = name; } 
     public LocalDate getBirthDate() { 
-        return birthDate; 
+        return birthDay;
     }
     public String getEmail() {
         return email;

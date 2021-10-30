@@ -1,9 +1,11 @@
 package pt.iade.school1.models.repository;
 
+import pt.iade.school1.models.Person;
 import pt.iade.school1.models.Student;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class StudentRepository  {
     private static ArrayList<Student> students =  new ArrayList<Student>();
@@ -40,5 +42,5 @@ public class StudentRepository  {
         students.add(s);
         return true;
     }
-    
+
 }
